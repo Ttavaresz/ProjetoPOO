@@ -20,25 +20,26 @@ class Jogador {
         posicao = posicaoInicial;
         this.posicaoInicial = posicaoInicial;
         posicaoAnterior = posicaoInicial;
-        passivo.nome = "";
-        instantaneo.nome = "";
+//        passivo.nome = "";
+//        instantaneo.nome = "";
     }
     
-    public void setPassivo() {
-//        this.passivo = Item();
+    public void setPassivo(Item i) {
+        this.passivo = i;
+        i.toString();
     }
-    
-    public void setInstantaneo() {
-        
-    }
-    
-    public Item getPassivo() {
-        return passivo;
-    }
-    
-    public Item getInstantaneo() {
-        return instantaneo;
-    }
+//    
+//    public void setInstantaneo() {
+//        
+//    }
+//    
+//    public Item getPassivo() {
+//        return passivo;
+//    }
+//    
+//    public Item getInstantaneo() {
+//        return instantaneo;
+//    }
     
     public String getNome() {
         return nome;
@@ -81,6 +82,10 @@ class Jogador {
             checkpoint = 0;
         }
     }
+    
+//    public void descobreItem(int numeroDoItem) {
+//
+//    }
     
     public boolean validacaoParaVencer(int pReal){
         if(pReal >= 20) {

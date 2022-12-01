@@ -47,30 +47,32 @@ public final class JogoExplosao {
             } else if (valorDado < 6) {
                 System.out.print("Jogador [" + j.getNome() + "] tirou bomba no dado.");
                 bomba();
-            } else {
-                int numeroPowerupSorteado = dado.rolar();             
-                switch(numeroPowerupSorteado) {
-                    case 1:
-                        j.setPassivo();
-                        System.out.print("Parabens jogador " + j.getNome() + " voce ganhou um item [" + nomeDoItem + "] do tipo passivo.");
-                        break;
-                    case 2:
-                        System.out.print("Parabens jogador " + j.getNome() + " voce ganhou um item [" + nomeDoItem + "] do tipo passivo.");
-                        break;
-                    case 3:
-                        System.out.print("Parabens jogador " + j.getNome() + " voce ganhou um item [" + nomeDoItem + "] do tipo passivo.");
-                        break;
-                    case 4:
-                        System.out.print("Parabens jogador " + j.getNome() + " voce ganhou um item [" + nomeDoItem + "] do tipo instantaneo.");
-                        break;
-                    case 5:
-                        System.out.print("Parabens jogador " + j.getNome() + " voce ganhou um item [" + nomeDoItem + "] do tipo instantaneo.");
-                        break;
-                    case 6:
-                        System.out.print("Parabens jogador " + j.getNome() + " voce ganhou um item [" + nomeDoItem + "] do tipo instantaneo.");
-                        break;
-                }
             }
+//            } else {
+//                int numeroPowerupSorteado = dado.rolar();    
+//                descobreItem(numeroPowerupSorteado);
+//                switch(numeroPowerupSorteado) {
+//                    case 1:
+//                        j.setPassivo();
+//                        System.out.print("Parabens jogador " + j.getNome() + " voce ganhou um item [" + nomeDoItem + "] do tipo passivo.");
+//                        break;
+//                    case 2:
+//                        System.out.print("Parabens jogador " + j.getNome() + " voce ganhou um item [" + nomeDoItem + "] do tipo passivo.");
+//                        break;
+//                    case 3:
+//                        System.out.print("Parabens jogador " + j.getNome() + " voce ganhou um item [" + nomeDoItem + "] do tipo passivo.");
+//                        break;
+//                    case 4:
+//                        System.out.print("Parabens jogador " + j.getNome() + " voce ganhou um item [" + nomeDoItem + "] do tipo instantaneo.");
+//                        break;
+//                    case 5:
+//                        System.out.print("Parabens jogador " + j.getNome() + " voce ganhou um item [" + nomeDoItem + "] do tipo instantaneo.");
+//                        break;
+//                    case 6:
+//                        System.out.print("Parabens jogador " + j.getNome() + " voce ganhou um item [" + nomeDoItem + "] do tipo instantaneo.");
+//                        break;
+//                }
+//            }
         }
         
         boolean validaVitoria = j.validacaoParaVencer(j.posicaoReal);
