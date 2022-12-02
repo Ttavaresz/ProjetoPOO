@@ -22,6 +22,12 @@ class Dado {
         return valor;
     }
     
+    public int sortearJogadorParaImobilizar(int nJogadores) {
+        Random randomJogador = new Random();
+        int valor = randomJogador.nextInt(nJogadores) + 1;
+        return valor;
+    }
+    
     @Override
     public String toString() {
         return "tirou " + valor + " no dado.";

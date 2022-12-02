@@ -6,8 +6,9 @@ package jogoexplosao;
  */
 class Jogador {
     private final String nome;
-    public Item passivo;
-    public Item instantaneo;
+    private Item passivo;
+    private Item instantaneo;
+    private boolean podeMover;
     private final int posicaoInicial;
     private int posicao;
     public int posicaoAnterior;
@@ -20,32 +21,36 @@ class Jogador {
         posicao = posicaoInicial;
         this.posicaoInicial = posicaoInicial;
         posicaoAnterior = posicaoInicial;
-//        passivo.nome = "";
-//        instantaneo.nome = "";
+        this.podeMover = true;
     }
     
     public void setPassivo(Item i) {
         this.passivo = i;
-        i.toString();
     }
-//    
-//    public void setInstantaneo() {
-//        
-//    }
-//    
-//    public Item getPassivo() {
-//        return passivo;
-//    }
-//    
-//    public Item getInstantaneo() {
-//        return instantaneo;
-//    }
+    
+    public void setInstantaneo(Item i) {
+        this.instantaneo = i;
+    }
+    
+    public Item getPassivo() {
+        return passivo;
+    }
+    
+    public Item getInstantaneo() {
+        return instantaneo;
+    }
     
     public String getNome() {
         return nome;
     }
     
     public void mover(int valorDado) {
+        if(instantaneo != null) {
+            if(instantaneo.nome.equals("Velocidade")) {
+                System.out.print("\nEntrou no if da velocidade(APAGAR)\n");
+                valorDado *= 2;
+            }
+        }
         posicaoAnterior = posicao;
         posicao += valorDado;
         if(posicao >= 20) {
@@ -57,10 +62,26 @@ class Jogador {
         validacaoParaVencer(posicaoReal);
     }
     
+    public void bloquear() {
+        podeMover = false;
+    }
+    
+    public void desbloquear() {
+        podeMover = true;
+    }
+    
+    public boolean podeJogar() {
+        return podeMover;
+    }
+    
     public void recalculaPosicaoRealCheckpoint() {
         int recalculaPosicaoReal;
         recalculaPosicaoReal = posicao - checkpoint;
         posicaoReal -= recalculaPosicaoReal;
+    }
+    
+    public void pularParaProximoCheckpoint() {
+        posicaoReal += 5;
     }
     
     public void setPosicao(int pCheckpoint) {
@@ -82,10 +103,6 @@ class Jogador {
             checkpoint = 0;
         }
     }
-    
-//    public void descobreItem(int numeroDoItem) {
-//
-//    }
     
     public boolean validacaoParaVencer(int pReal){
         if(pReal >= 20) {

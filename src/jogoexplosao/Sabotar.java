@@ -6,6 +6,10 @@ package jogoexplosao;
  */
 
 public class Sabotar extends Instantaneo {
+    public Sabotar() {
+        super.nome = "Sabotar";
+    }
+    
     @Override
     public String toString() {
         return "Sabotar";
